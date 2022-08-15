@@ -3,7 +3,7 @@
 #install dependences
 
 echo "Installing dependences"
-sudo apt install -y neovim git tmux curl wget 
+sudo apt install -y neovim vim git tmux curl wget 1&>/dev/null
 
 
 
@@ -19,7 +19,6 @@ vim +PlugInstall +qall
 # tmux
 
 echo "Configure tmux"
-
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/
 
 
