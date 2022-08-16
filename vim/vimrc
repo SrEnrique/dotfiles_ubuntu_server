@@ -10,11 +10,31 @@ call plug#begin()
 
 	Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 	Plug 'junegunn/fzf.vim'
-
+  Plug 'tpope/vim-fugitive'
+  Plug 'kshenoy/vim-signature'
+  
 call plug#end()
 
 
 syntax on
+
+hi TestColor guifg=#00FF00 guibg=#FFFF00 ctermbg=NONE ctermfg=NONE cterm=NONE
+let g:fzf_colors =
+  \ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'TestColor'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
+
+
 
 " ===== Color ======
 set background=dark
@@ -22,12 +42,11 @@ colorscheme gruvbox
 
 
 " =====  Theme ========
-" let g:airline#extensions#tabline#formatter = 'default'
 let g:airline#extensions#tabline#enabled = 1
-" let g:airline#extensions#hunks#enabled=0
-" let g:airline#extensions#branch#enabled=1
-
-let g:airline_theme='tmuxline'
+let g:airline#extensions#hunks#enabled=0
+let g:airline#extensions#branch#enabled=1
+let g:airline#extensions#tabline#formatter = 'default'
+let g:airline_theme='base16_adwaita'
 
 
 " ==== Indentation =====
@@ -42,6 +61,5 @@ set wrap       		"Don't wrap lines
 set linebreak    	"Wrap lines at convenient points
 
 " ===== number =======\
-
 set rnu
 set nu

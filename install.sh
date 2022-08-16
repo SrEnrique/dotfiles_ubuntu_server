@@ -14,10 +14,17 @@ PWD=$(pwd)
 ln -s $PWD/vim/vimrc ~/.vimrc
 vim +PlugInstall +qall
 
+# Config nvim
+
+echo "Configure nvim"
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+mkdir -p ~/.config/nvim
+
+ln -s $PWD/vim/vimrc ~/.config/nvim/init.vim
+nvim +PlugInstall +qall
 
 
 # tmux
-
 echo "Configure tmux"
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/
 
